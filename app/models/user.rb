@@ -3,7 +3,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-  validates :name, presence: true
+  validates :name, presence: true #nameカラムが空の状態ではDBに保存できない
 
   has_many :room_users
   has_many :rooms, through: :room_users
